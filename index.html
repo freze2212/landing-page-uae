@@ -30,7 +30,7 @@
   .card { padding: 8px !important; }
   .globe-wrap { width: 65px !important; height: 65px !important; }
   .ring1, .ring2, .ring3 { width: auto !important; height: auto !important; }
-  .globe-canvas { width: 55px !important; height: 55px !important; }
+  .globe-canvas, .globe-gif { width: 55px !important; height: 55px !important; }
   .name { font-size: 11px !important; letter-spacing: 0.08em !important; }
   .sub { font-size: 6px !important; }
   .sv { font-size: 8px !important; }
@@ -123,7 +123,7 @@ body {
   .card { padding: 8px 8px 10px !important; }
   .globe-wrap { width: 70px !important; height: 70px !important; }
   .ring1, .ring2, .ring3 { width: auto !important; height: auto !important; }
-  .globe-canvas { width: 58px !important; height: 58px !important; }
+  .globe-canvas, .globe-gif { width: 58px !important; height: 58px !important; }
   .name { font-size: 12px !important; letter-spacing: 0.1em !important; }
   .sub { font-size: 6.5px !important; }
   .sv { font-size: 9px !important; }
@@ -166,19 +166,19 @@ body {
 .sg .divider { background:linear-gradient(90deg,transparent,rgba(192,0,26,0.7),transparent); }
 .sg .blk { background:#C0001A; box-shadow:0 0 5px rgba(192,0,26,0.9); }
 
-/* Korea */
-.kr .bt  { fill:none; stroke:#CD2E3A; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:110 9999; animation:br 2s linear infinite; filter:drop-shadow(0 0 6px #CD2E3A); }
-.kr .bt2 { fill:none; stroke:#0047A0; stroke-width:1.5; stroke-linecap:round; stroke-dasharray:55 9999; animation:br 2s linear infinite; animation-delay:-0.9s; filter:drop-shadow(0 0 4px #0047A0); }
-.kr .bt3 { fill:none; stroke:rgba(255,255,255,0.4); stroke-width:1; stroke-linecap:round; stroke-dasharray:30 9999; animation:br 2s linear infinite; animation-delay:-1.5s; }
-.kr .btrack { stroke:rgba(205,46,58,0.12); }
-.kr .card { background:linear-gradient(160deg,rgba(5,5,20,0.45) 0%,rgba(2,2,10,0.55) 100%); border:1px solid rgba(205,46,58,0.3); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
-.kr .card::after { background:radial-gradient(ellipse,rgba(205,46,58,0.15) 0%,transparent 70%); }
-.kr .ring1 { border:1px solid rgba(205,46,58,0.18); }
-.kr .ring1::before { border:1px dashed rgba(0,71,160,0.15); }
-.kr .ring2 { border-top-color:#CD2E3A; border-right-color:rgba(0,71,160,0.5); filter:drop-shadow(0 0 4px #CD2E3A); }
-.kr .ring3 { border-bottom-color:rgba(0,71,160,0.4); }
-.kr .divider { background:linear-gradient(90deg,transparent,rgba(205,46,58,0.7),transparent); }
-.kr .blk { background:#aaaaaa; box-shadow:0 0 5px rgba(200,200,200,0.5); }
+/* UAE */
+.ae .bt  { fill:none; stroke:#FF0000; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:110 9999; animation:br 2s linear infinite; filter:drop-shadow(0 0 6px #FF0000); }
+.ae .bt2 { fill:none; stroke:#00732F; stroke-width:1.5; stroke-linecap:round; stroke-dasharray:55 9999; animation:br 2s linear infinite; animation-delay:-0.9s; filter:drop-shadow(0 0 4px #00732F); }
+.ae .bt3 { fill:none; stroke:rgba(255,255,255,0.5); stroke-width:1; stroke-linecap:round; stroke-dasharray:30 9999; animation:br 2s linear infinite; animation-delay:-1.5s; }
+.ae .btrack { stroke:rgba(255,0,0,0.12); }
+.ae .card { background:linear-gradient(160deg,rgba(5,20,5,0.45) 0%,rgba(2,10,2,0.55) 100%); border:1px solid rgba(0,115,47,0.3); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+.ae .card::after { background:radial-gradient(ellipse,rgba(0,115,47,0.15) 0%,transparent 70%); }
+.ae .ring1 { border:1px solid rgba(0,115,47,0.18); }
+.ae .ring1::before { border:1px dashed rgba(255,0,0,0.15); }
+.ae .ring2 { border-top-color:#00732F; border-right-color:rgba(255,0,0,0.5); filter:drop-shadow(0 0 4px #00732F); }
+.ae .ring3 { border-bottom-color:rgba(255,0,0,0.4); }
+.ae .divider { background:linear-gradient(90deg,transparent,rgba(0,115,47,0.7),transparent); }
+.ae .blk { background:#00732F; box-shadow:0 0 5px rgba(0,115,47,0.9); }
 
 /* Vietnam */
 .vn .bt  { fill:none; stroke:#DA251D; stroke-width:2.5; stroke-linecap:round; stroke-dasharray:110 9999; animation:br 2s linear infinite; filter:drop-shadow(0 0 6px #DA251D); }
@@ -206,6 +206,7 @@ body {
 @keyframes spin-slow { to{transform:rotate(360deg)} }
 @keyframes spin-med  { to{transform:rotate(360deg)} }
 canvas.globe-canvas { border-radius:50%; display:block; position:relative; z-index:2; }
+img.globe-gif { width:100px; height:100px; border-radius:50%; display:block; position:relative; z-index:2; object-fit:cover; }
 .sub  { font-size:12px; letter-spacing:0.25em; color:rgba(255,255,255,0.4); font-family:'Courier New',monospace; text-transform:uppercase; margin-bottom:3px; }
 .name { font-size:26px; font-weight:900; color:#f5a800; letter-spacing:0.12em; font-family:'Courier New',monospace; text-shadow:0 0 24px rgba(200,120,0,0.7); margin-bottom:5px; }
 .divider { width:40px; height:1px; margin:6px 0 10px; }
@@ -518,8 +519,8 @@ button.btn:hover { transform:scale(1.05) translateY(-1px); }
     </div>
   </div>
 
-  <!-- KOREA -->
-  <div class="card-outer kr" id="card-korea" style="cursor:pointer">
+  <!-- UAE -->
+  <div class="card-outer ae" id="card-uae" style="cursor:pointer">
     <svg class="border-svg" viewBox="0 0 280 320" preserveAspectRatio="none">
       <rect class="btrack" x="1" y="1" width="278" height="318" rx="23"/>
       <rect class="bt"  x="1" y="1" width="278" height="318" rx="23"/>
@@ -527,20 +528,20 @@ button.btn:hover { transform:scale(1.05) translateY(-1px); }
       <rect class="bt3" x="1" y="1" width="278" height="318" rx="23"/>
     </svg>
     <div class="card">
-      <div class="particles" id="pts-kr"></div>
+      <div class="particles" id="pts-ae"></div>
       <div class="globe-wrap">
         <div class="ring1"></div><div class="ring2"></div><div class="ring3"></div>
-        <canvas class="globe-canvas" id="c-kr" width="100" height="100"></canvas>
+        <img src="UAE.gif" alt="UAE" class="globe-gif">
       </div>
-      <div class="sub">EAST ASIA SERVER</div>
-      <div class="name">KOREA</div>
+      <div class="sub">MIDDLE EAST SERVER</div>
+      <div class="name">UAE</div>
       <div class="divider"></div>
       <div class="stats">
         <div class="stat"><span class="sl">Encrypt</span><span class="sv">AES-256</span></div>
         <div class="stat"><span class="sl">Shield</span><div class="shield-blocks"><div class="blk"></div><div class="blk"></div><div class="blk"></div><div class="blk"></div><div class="blk"></div><div class="blk"></div></div></div>
         <div class="stat"><span class="sl">Access</span><div class="star-row"><span class="star"><svg viewBox="0 0 10 10"><polygon points="5,0.5 6.2,3.8 9.8,3.8 6.9,5.9 7.9,9.2 5,7.2 2.1,9.2 3.1,5.9 0.2,3.8 3.8,3.8" fill="#FFD700"/></svg></span><span class="star"><svg viewBox="0 0 10 10"><polygon points="5,0.5 6.2,3.8 9.8,3.8 6.9,5.9 7.9,9.2 5,7.2 2.1,9.2 3.1,5.9 0.2,3.8 3.8,3.8" fill="#FFD700"/></svg></span><span class="star"><svg viewBox="0 0 10 10"><polygon points="5,0.5 6.2,3.8 9.8,3.8 6.9,5.9 7.9,9.2 5,7.2 2.1,9.2 3.1,5.9 0.2,3.8 3.8,3.8" fill="#FFD700"/></svg></span><span class="star"><svg viewBox="0 0 10 10"><polygon points="5,0.5 6.2,3.8 9.8,3.8 6.9,5.9 7.9,9.2 5,7.2 2.1,9.2 3.1,5.9 0.2,3.8 3.8,3.8" fill="#FFD700"/></svg></span><span class="star"><svg viewBox="0 0 10 10"><polygon points="5,0.5 6.2,3.8 9.8,3.8 6.9,5.9 7.9,9.2 5,7.2 2.1,9.2 3.1,5.9 0.2,3.8 3.8,3.8" fill="#FFD700"/></svg></span></div></div>
       </div>
-      <div class="btn-wrap"><button class="btn">VÀO CỔNG HÀN QUỐC</button></div>
+      <div class="btn-wrap"><button class="btn">VÀO CỔNG UAE</button></div>
     </div>
   </div>
 
@@ -636,7 +637,7 @@ function loadConfig() {
         img.src = cfg.logo;
         img.style.display = 'block';
       }
-      ['card-brazil','card-singapore','card-korea','card-vietnam'].forEach(id => {
+      ['card-brazil','card-singapore','card-uae','card-vietnam'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('click', () => { window.location.href = mainUrl; });
       });
@@ -667,7 +668,7 @@ function makeParticles(id, c1, c2){
 }
 makeParticles('pts-br','#FEDF00','rgba(0,156,59,0.9)');
 makeParticles('pts-sg','#C0001A','rgba(255,255,255,0.7)');
-makeParticles('pts-kr','#CD2E3A','#0047A0');
+makeParticles('pts-ae','#00732F','#FF0000');
 makeParticles('pts-vn','#f5c518','rgba(218,37,29,0.9)');
 // messenger circle - no particles needed
 
@@ -724,38 +725,6 @@ function makeRenderer(id, size){
   const rdr=makeRenderer('c-sg',110);
   const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(42,1,0.1,100);cam.position.z=2.8;
   const g=new THREE.Mesh(new THREE.SphereGeometry(1,64,64),new THREE.MeshPhongMaterial({map:tex,shininess:15,specular:new THREE.Color(0x110000)}));
-  sc.add(g);sc.add(new THREE.AmbientLight(0xffffff,0.35));
-  const dl=new THREE.DirectionalLight(0xfff5e0,1.1);dl.position.set(2,1.5,2);sc.add(dl);
-  (function a(){requestAnimationFrame(a);g.rotation.y+=0.008;rdr.render(sc,cam);})();
-})();
-
-// === KOREA ===
-(function(){
-  const TW=1024,TH=512,tc=document.createElement('canvas');tc.width=TW;tc.height=TH;
-  const tx=tc.getContext('2d');tx.fillStyle='#d0d0d0';tx.fillRect(0,0,TW,TH);
-  function drawTaeguk(cx,cy){
-    const R=TH*0.09;
-    tx.save();tx.beginPath();tx.arc(cx,cy,R,0,Math.PI*2);tx.clip();
-    tx.fillStyle='#0047A0';tx.beginPath();tx.arc(cx,cy,R,0,Math.PI*2);tx.fill();
-    tx.fillStyle='#CD2E3A';tx.beginPath();tx.moveTo(cx,cy);tx.arc(cx,cy,R,-Math.PI*3/4,Math.PI/4);tx.closePath();tx.fill();
-    const bx=cx+Math.cos(Math.PI/4)*R/2,by=cy+Math.sin(Math.PI/4)*R/2;
-    tx.fillStyle='#0047A0';tx.beginPath();tx.arc(bx,by,R/2,0,Math.PI*2);tx.fill();
-    const rx=cx+Math.cos(-Math.PI*3/4)*R/2,ry=cy+Math.sin(-Math.PI*3/4)*R/2;
-    tx.fillStyle='#CD2E3A';tx.beginPath();tx.arc(rx,ry,R/2,0,Math.PI*2);tx.fill();
-    tx.restore();
-  }
-  function drawTrigram(cx,cy,angle,pattern){
-    const R=TH*0.09,bL=R*1.10,bH=R*0.11,bG=R*0.09;
-    tx.save();tx.translate(cx,cy);tx.rotate(angle);tx.fillStyle='#000000';
-    [-1,0,1].forEach((row,i)=>{const by=row*(bH+bG);if(pattern[i]===1){tx.fillRect(-bL/2,by-bH/2,bL,bH);}else{const gap=bL*0.18;tx.fillRect(-bL/2,by-bH/2,bL/2-gap/2,bH);tx.fillRect(gap/2,by-bH/2,bL/2-gap/2,bH);}});
-    tx.restore();
-  }
-  function drawFlag(cx,cy){const R=TH*0.09,d=R*2.3;drawTaeguk(cx,cy);drawTrigram(cx-d*0.68,cy-d*0.42,-Math.PI/4,[1,1,1]);drawTrigram(cx+d*0.68,cy-d*0.42,Math.PI/4,[1,0,1]);drawTrigram(cx-d*0.68,cy+d*0.42,Math.PI/4,[0,1,0]);drawTrigram(cx+d*0.68,cy+d*0.42,-Math.PI/4,[0,0,0]);}
-  drawFlag(TW/2,TH/2);drawFlag(0,TH/2);drawFlag(TW,TH/2);
-  const tex=new THREE.CanvasTexture(tc);
-  const rdr=makeRenderer('c-kr',110);
-  const sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(42,1,0.1,100);cam.position.z=2.8;
-  const g=new THREE.Mesh(new THREE.SphereGeometry(1,64,64),new THREE.MeshPhongMaterial({map:tex,shininess:15,specular:new THREE.Color(0x111111)}));
   sc.add(g);sc.add(new THREE.AmbientLight(0xffffff,0.35));
   const dl=new THREE.DirectionalLight(0xfff5e0,1.1);dl.position.set(2,1.5,2);sc.add(dl);
   (function a(){requestAnimationFrame(a);g.rotation.y+=0.008;rdr.render(sc,cam);})();
