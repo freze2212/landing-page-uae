@@ -613,9 +613,12 @@ function resolveSiteConfig(cfg, domains) {
   const domainCfg = domainKey ? domains[domainKey] : (domains[host] || {});
   const mainUrl = (typeof domainCfg === 'string' ? domainCfg : domainCfg.main_url) || cfg.main_url || '#';
   let messUrl =
-    (typeof domainCfg === 'object' && domainCfg.messenger_url) ||
+    (typeof domainCfg === 'object' && (domainCfg.tele_url || domainCfg.telegram_url || domainCfg.messenger_url)) ||
     (typeof domainCfg === 'object' && domainCfg.messenger && domainCfg.messenger.url) ||
+    (typeof domainCfg === 'object' && domainCfg.telegram && domainCfg.telegram.url) ||
+    (cfg.tele_url || cfg.telegram_url) ||
     (cfg.messenger && cfg.messenger.url) ||
+    (cfg.telegram && cfg.telegram.url) ||
     mainUrl;
 
   if (typeof messUrl === 'string') {
