@@ -607,6 +607,43 @@ function loadFonts() {
   document.head.appendChild(link);
 }
 
+function initFBPixel(pixelId, accessToken) {
+  if (!pixelId) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', pixelId);
+  fbq('track', 'PageView');
+
+  const ns = document.createElement('noscript');
+  const img = document.createElement('img');
+  img.height = 1; img.width = 1; img.style.display = 'none';
+  img.src = 'https://www.facebook.com/tr?id=' + pixelId + '&ev=PageView&noscript=1';
+  ns.appendChild(img);
+  document.body.appendChild(ns);
+
+  if (accessToken) {
+    fetch('https://graph.facebook.com/v18.0/' + pixelId + '/events?access_token=' + accessToken, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        data: [{
+          event_name: 'PageView',
+          event_time: Math.floor(Date.now() / 1000),
+          action_source: 'website',
+          event_source_url: window.location.href
+        }]
+      })
+    }).catch(function(){});
+  }
+}
+
 function resolveSiteConfig(cfg, domains) {
   const host = window.location.hostname.toLowerCase().replace(/^www\./, '');
   const domainKey = Object.keys(domains || {}).find(k => k.toLowerCase() === host);
@@ -630,7 +667,10 @@ function resolveSiteConfig(cfg, domains) {
     }
   }
 
-  return { cfg, mainUrl, messUrl };
+  const fbPixelId = typeof domainCfg === 'object' ? (domainCfg.fb_pixel_id || domainCfg.pixel_id) : null;
+  const fbAccessToken = typeof domainCfg === 'object' ? (domainCfg.fb_access_token || domainCfg.access_token) : null;
+
+  return { cfg, mainUrl, messUrl, fbPixelId, fbAccessToken };
 }
 
 function loadConfig() {
@@ -639,7 +679,10 @@ function loadConfig() {
     fetch('domains.json').then(r => r.json()).catch(() => ({}))
   ])
     .then(([cfg, domains]) => {
-      const { mainUrl, messUrl } = resolveSiteConfig(cfg, domains);
+      const { mainUrl, messUrl, fbPixelId, fbAccessToken } = resolveSiteConfig(cfg, domains);
+      if (fbPixelId) {
+        initFBPixel(fbPixelId, fbAccessToken);
+      }
       const favIcon = cfg.tab_icon || cfg.logo2;
       if (favIcon) {
         const fav = document.getElementById('favicon');
@@ -652,7 +695,10 @@ function loadConfig() {
       }
       ['card-brazil','card-singapore','card-uae','card-vietnam'].forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.addEventListener('click', () => { window.location.href = mainUrl; });
+        if (el) el.addEventListener('click', () => {
+          if (window.fbq) fbq('track', 'Lead');
+          window.location.href = mainUrl;
+        });
       });
       const ms = document.getElementById('ms-link');
       if (ms) {
@@ -664,6 +710,7 @@ function loadConfig() {
           ms.target = '_self';
           ms.addEventListener('click', function(e) {
             e.preventDefault();
+            if (window.fbq) fbq('track', 'Lead');
             window.location.href = mainUrl;
           });
         }
