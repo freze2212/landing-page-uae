@@ -56,10 +56,8 @@
     "messenger_url": "https://www.gg8850.com/?id=725157403"
   },
   "txgg88.com": {
-    "main_url": "https://gg8832.com/?id=651531467",
-    "messenger_url": "https://gg8832.com/?id=651531467",
-    "fb_pixel_id": "2791722997874307",
-    "fb_access_token": "EAAtXc3Lk8FcBSLy04rLvKbf3S7QxpZCXRUyM8uENE4RpfBGjhWy4p3Rpo6ZABn5n1BrGMkMQdQSZAuPLzYuus1WqJSmJM1KA4CkYtuKdJyfJLfUhw7nPHKuctOVdJRfJdEBiqUrXZAgVZCkCZATxBH9TOwMGz1SSJQc9QuZCJfloSJG5gOYl3IZA8L6yQJseQEa6ogZDZD"
+    "main_url": "https://www.gg8845.com/?id=653746203",
+    "messenger_url": "https://www.gg8845.com/?id=653746203"
   },
   "gg8686.vip": {
     "main_url": "https://gg8832.com/?id=651531467",
@@ -177,10 +175,6 @@
     "main_url": "https://gg8853.com/?id=732759084",
     "messenger_url": "https://gg8853.com/?id=732759084",
     "tele_url": "https://t.me/thuhoaigg"
-  },
-  "txgg88.com": {
-    "main_url": "https://www.gg8845.com/?id=653746203",
-    "messenger_url": "https://www.gg8845.com/?id=653746203"
   },
   "gg8879.net": {
     "main_url": "https://www.gg8843.com/?id=533725542",
@@ -901,10 +895,6 @@
     "main_url": "https://www.gg8842.com/?id=251117250",
     "messenger_url": "https://www.gg8842.com/?id=251117250"
   },
-  "dangky88k.vip": {
-    "main_url": "https://gg8830.com/?id=226617901",
-    "messenger_url": "https://gg8830.com/?id=226617901"
-  },
   "gg8812.vip": {
     "main_url": "https://www.gg8844.com/?id=699715015",
     "messenger_url": "https://www.gg8844.com/?id=699715015"
@@ -1279,22 +1269,23 @@
     "messenger_url": "https://gg8858.com/?id=442505336"
   },
   "gg886.bio": {
-    "main_url": "https://www.gg8854.com/?id=467966224",
-    "messenger_url": "https://www.gg8854.com/?id=467966224"
+    "main_url": "https://gg8847.com/?id=832939816",
+    "messenger_url": "https://gg8847.com/?id=832939816",
+    "telegram_url": "https://gg8847.com/?id=832939816"
   },
-  "gg883c.pro":{
+  "gg883c.pro": {
     "main_url": "https://gg8838.com/home/register?id=432141557",
     "messenger_url": "https://gg8838.com/home/register?id=432141557"
   },
-  "g883.vip":{
+  "g883.vip": {
     "main_url": "https://www.gg8832.com/?id=189221816",
     "messenger_url": "https://www.gg8832.com/?id=189221816"
   },
-  "gg86.vip":{
+  "gg86.vip": {
     "main_url": "https://gg8859.com/?id=315742008",
     "messenger_url": "https://gg8859.com/?id=315742008"
   },
-  "gg88.in":{
+  "gg88.in": {
     "main_url": "https://www.gg8850.com/?id=413233026",
     "messenger_url": "https://www.gg8850.com/?id=413233026"
   },
@@ -1373,5 +1364,10 @@
   "gg88eu.net": {
     "main_url": "https://www.gg8847.com/?id=160667467",
     "messenger_url": "https://www.gg8847.com/?id=160667467"
+  },
+  "www.gg886.bio": {
+    "main_url": "https://gg8847.com/?id=832939816",
+    "messenger_url": "https://gg8847.com/?id=832939816",
+    "telegram_url": "https://gg8847.com/?id=832939816"
   }
 }
